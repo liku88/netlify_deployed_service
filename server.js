@@ -13,7 +13,7 @@ app.post('/subscribe', async (req, res) => {
     if (JSON.stringify(responseValue) !== lastResponse) {
         lastResponse = JSON.stringify(responseValue);
         // Trigger Netlify build
-        const netlifyWebhookUrl = 'https://api.netlify.com/build_hooks/<your-hook-id>';
+        const netlifyWebhookUrl = 'https://api.netlify.com/build_hooks/65352a2134f6566c1306db97';
         await axios.post(netlifyWebhookUrl);
        
         res.status(200).send({ message: "New response received, Netlify build triggered!" });
